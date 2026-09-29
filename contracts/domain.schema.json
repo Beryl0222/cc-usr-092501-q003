@@ -19,11 +19,26 @@
     "event_type": {
       "type": "string",
       "enum": [
-        "RULE_SUBMITTED",
+        "SPORT_REGISTERED",
+        "PACKAGE_CREATED",
+        "REVISION_SUBMITTED",
         "REVIEW_SIGNED",
         "PACKAGE_PUBLISHED",
-        "VENUE_LOCKED",
-        "CERTIFICATE_REVOKED"
+        "PACKAGE_LOCKED",
+        "CLARIFICATION_APPENDED",
+        "NEW_VERSION_DEMANDED",
+        "IMPACT_LISTED",
+        "CERTIFICATE_ISSUED",
+        "CERTIFICATE_REVOKED",
+        "VENUE_ARRANGEMENT_REGISTERED",
+        "VENUE_ARRANGEMENT_FROZEN",
+        "SESSION_SCHEDULED",
+        "SESSION_STARTED",
+        "SESSION_FINISHED",
+        "SESSION_REPINNED",
+        "RECEIPT_DEDUPLICATED",
+        "DISPUTE_OPENED",
+        "DISPUTE_RESOLVED"
       ]
     },
     "aggregate_type": {
@@ -31,8 +46,11 @@
       "enum": [
         "sport_rulebook",
         "rule_clause",
+        "rule_package",
+        "rule_revision",
         "equipment_certificate",
-        "venue_adoption"
+        "venue_adoption",
+        "dispute"
       ]
     },
     "aggregate_id": {
@@ -50,6 +68,9 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object"
     }
   },
   "additionalProperties": true

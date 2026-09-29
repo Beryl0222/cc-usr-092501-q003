@@ -1,9 +1,20 @@
 {
-  "event_id": "092501-003-sample-001",
-  "event_type": "RULE_SUBMITTED",
-  "aggregate_type": "sport_rulebook",
-  "aggregate_id": "emerging_sport_rule_certification-001",
+  "event_id": "rev-sample-001",
+  "event_type": "REVISION_SUBMITTED",
+  "aggregate_type": "rule_revision",
+  "aggregate_id": "teq-v1-rev-1",
   "occurred_at": "2026-09-24T10:00:00+08:00",
   "version": 1,
-  "summary": "登记新兴赛项规则认证库的一条领域事实"
+  "summary": "台克球资格赛规则包首版修订提交，等待技术、医疗安全、竞赛运营三方签署",
+  "payload": {
+    "revision_id": "teq-v1-rev-1",
+    "package_id": "teq-v1",
+    "submitted_by": "alice",
+    "submitter_role": "technical",
+    "change_class": "initial",
+    "summary": "单打每回合触球上限 3 次",
+    "content": {
+      "touch_limit": 3
+    }
+  }
 }

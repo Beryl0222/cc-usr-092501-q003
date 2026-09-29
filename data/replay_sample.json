@@ -1,0 +1,94 @@
+{
+  "commands": [
+    {
+      "command_id": "c99-duplicate-receipt-first",
+      "occurred_at": "2026-09-25T09:31:00+08:00",
+      "command": "receive_certificate",
+      "args": {"cert_id": "cert-net-A", "event_id": "receipt-A-001", "detail": {"model": "TeqNet 500", "batch": "B7"}, "occurred_at": "2026-09-25T09:30:00+08:00"}
+    },
+    {
+      "command_id": "c01-sport",
+      "occurred_at": "2026-09-25T09:00:00+08:00",
+      "command": "register_sport",
+      "args": {"sport": "teqball", "name": "台克球"}
+    },
+    {
+      "command_id": "c02-package",
+      "occurred_at": "2026-09-25T09:01:00+08:00",
+      "command": "create_package",
+      "args": {"package_id": "teq-v1", "sport": "teqball", "stage": "qualification", "clauses": {"touch_limit": 3}}
+    },
+    {
+      "command_id": "c03-revision",
+      "occurred_at": "2026-09-25T09:02:00+08:00",
+      "command": "submit_revision",
+      "args": {"package_id": "teq-v1", "revision_id": "rev-1", "submitted_by": "alice", "submitter_role": "technical", "change_class": "initial", "summary": "首版：每回合触球上限3次", "content": {"touch_limit": 3}}
+    },
+    {
+      "command_id": "c04-sign-tech",
+      "occurred_at": "2026-09-25T09:03:00+08:00",
+      "command": "sign_revision",
+      "args": {"revision_id": "rev-1", "signer": "bob", "role": "technical"}
+    },
+    {
+      "command_id": "c05-sign-med",
+      "occurred_at": "2026-09-25T09:04:00+08:00",
+      "command": "sign_revision",
+      "args": {"revision_id": "rev-1", "signer": "carol", "role": "medical_safety"}
+    },
+    {
+      "command_id": "c06-sign-ops",
+      "occurred_at": "2026-09-25T09:05:00+08:00",
+      "command": "sign_revision",
+      "args": {"revision_id": "rev-1", "signer": "dave", "role": "competition_ops"}
+    },
+    {
+      "command_id": "c07-lock",
+      "occurred_at": "2026-09-25T09:06:00+08:00",
+      "command": "lock_package",
+      "args": {"zone": "north", "package_id": "teq-v1"}
+    },
+    {
+      "command_id": "c08-schedule-s1",
+      "occurred_at": "2026-09-25T09:07:00+08:00",
+      "command": "schedule_session",
+      "args": {"session_id": "north-qf-01", "zone": "north", "sport": "teqball", "stage": "qualification", "package_id": "teq-v1"}
+    },
+    {
+      "command_id": "c09-schedule-s2",
+      "occurred_at": "2026-09-25T09:08:00+08:00",
+      "command": "schedule_session",
+      "args": {"session_id": "north-qf-02", "zone": "north", "sport": "teqball", "stage": "qualification", "package_id": "teq-v1"}
+    },
+    {
+      "command_id": "c10-start-s1",
+      "occurred_at": "2026-09-25T09:20:00+08:00",
+      "command": "start_session",
+      "args": {"session_id": "north-qf-01"}
+    },
+    {
+      "command_id": "c11-cert-issued",
+      "occurred_at": "2026-09-25T09:30:00+08:00",
+      "command": "receive_certificate",
+      "args": {"cert_id": "cert-net-A", "event_id": "receipt-A-001", "detail": {"model": "TeqNet 500", "batch": "B7"}, "occurred_at": "2026-09-25T09:30:00+08:00"}
+    },
+    {
+      "command_id": "c12-arrangement",
+      "occurred_at": "2026-09-25T09:32:00+08:00",
+      "command": "register_arrangement",
+      "args": {"arrangement_id": "arr-north-02", "zone": "north", "session_id": "north-qf-02", "cert_refs": ["cert-net-A"]}
+    },
+    {
+      "command_id": "c13-boundary-erratum",
+      "occurred_at": "2026-09-25T09:40:00+08:00",
+      "command": "submit_revision",
+      "args": {"package_id": "teq-v1", "revision_id": "rev-2", "submitted_by": "erin", "submitter_role": "technical", "change_class": "boundary", "summary": "勘误：单打每回合触球上限改为2次", "content": {"touch_limit": 2}}
+    },
+    {
+      "command_id": "c14-revoke",
+      "occurred_at": "2026-09-25T09:45:00+08:00",
+      "command": "revoke_certificate",
+      "args": {"cert_id": "cert-net-A", "reason": "网柱高度批次不达标"}
+    }
+  ]
+}

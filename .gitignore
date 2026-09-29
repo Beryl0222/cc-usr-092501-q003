@@ -1,6 +1,10 @@
 .env
 *.key
 *.pem
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
 .venv/
 __pycache__/
 *.py[cod]
