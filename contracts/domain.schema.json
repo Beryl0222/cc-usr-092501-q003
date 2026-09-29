@@ -14,25 +14,47 @@
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "接收后即固定；同编号异内容按争议处理，不得原地复用"
     },
     "event_type": {
       "type": "string",
       "enum": [
+        "SPORT_REGISTERED",
+        "COMPETITION_STAGE_DEFINED",
+        "RULE_PACKAGE_DRAFTED",
         "RULE_SUBMITTED",
         "REVIEW_SIGNED",
         "PACKAGE_PUBLISHED",
         "VENUE_LOCKED",
-        "CERTIFICATE_REVOKED"
+        "CLARIFICATION_APPENDED",
+        "PACKAGE_VERSION_SUPERSEDED",
+        "CERTIFICATE_RECEIVED",
+        "CERTIFICATE_DUPLICATE_RECEIVED",
+        "RECEIPT_DISPUTED",
+        "CERTIFICATE_REVOKED",
+        "FIXTURE_DECLARED",
+        "FIXTURE_STARTED",
+        "FIXTURE_FROZEN",
+        "FIXTURE_UNFROZEN",
+        "JUDGE_LEVEL_GRANTED",
+        "INTERPRETATION_CASED",
+        "LOCAL_SUPPLEMENT_ADDED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
-        "sport_rulebook",
+        "sport",
+        "competition_stage",
+        "rule_package",
         "rule_clause",
         "equipment_certificate",
-        "venue_adoption"
+        "venue_adoption",
+        "fixture",
+        "judge",
+        "interpretation_case",
+        "local_supplement"
       ]
     },
     "aggregate_id": {
@@ -45,7 +67,8 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "聚合内连续递增的版本号，用于乐观并发控制"
     },
     "summary": {
       "type": "string",

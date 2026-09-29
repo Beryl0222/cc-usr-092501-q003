@@ -1,8 +1,8 @@
 {
   "event_id": "092501-003-sample-001",
   "event_type": "RULE_SUBMITTED",
-  "aggregate_type": "sport_rulebook",
-  "aggregate_id": "emerging_sport_rule_certification-001",
+  "aggregate_type": "rule_clause",
+  "aggregate_id": "tecq-touches-001",
   "occurred_at": "2026-09-24T10:00:00+08:00",
   "version": 1,
   "summary": "登记新兴赛项规则认证库的一条领域事实"

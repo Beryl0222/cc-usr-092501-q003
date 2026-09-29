@@ -18,7 +18,7 @@ class EnvelopeTest(unittest.TestCase):
     def test_timezone_is_required(self) -> None:
         record = json.loads((ROOT / "data" / "sample.json").read_text(encoding="utf-8"))
         record["occurred_at"] = "2026-09-24T10:00:00"
-        self.assertIn("occurred_at 必须包含时区", validate_event(record))
+        self.assertIn("occurred_at 必须是带时区的 ISO 8601 时间", validate_event(record))
 
     def test_cli_accepts_sample(self) -> None:
         result = subprocess.run([sys.executable, "-m", "src.cli", "data/sample.json"], cwd=ROOT, text=True, capture_output=True)
